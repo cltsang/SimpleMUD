@@ -1,0 +1,6 @@
+
+- In room 4 there is an blacksmith who asks the player to beat ten thugs for him.
+  reward: 100 golds
+
+- In room 28, a gatekeeper tells the player to help him get back the skull chain from the boss in room 19.
+  reward: the gatekeeper will unlock the gate (room 18 to room 19 passage) for you.

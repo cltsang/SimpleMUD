@@ -1,0 +1,701 @@
+drop database onlinegame;
+create database onlinegame;
+use onlinegame;
+
+
+create table item(
+	id int auto_increment,
+	name varchar(100),
+	type varchar(50),
+	min int,
+	max int,
+	speed int,
+	price int,
+	strength int,
+	health int,
+	agility int,
+	maxhitpoints int,
+	accuracy int,
+	dodging int,
+	strikedamage int,
+	damageabsorb int,
+	hpregen int,
+	primary key(id)
+);
+
+
+insert into item values
+( 1, 'Knife', 'WEAPON', 2, 4, 2, 10, 0, 0, 0, 0, 10, 0, 0, 0, 0),
+( 2, 'Short Sword', 'WEAPON', 4, 9, 3, 40, 0, 0, 0, 0, 5, 0, 0, 0, 0),
+( 3, 'Imperial Edge', 'WEAPON', 9, 11, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+( 4, 'Oath Keeper', 'WEAPON', 9, 11, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+( 5, 'Marics Blade', 'WEAPON', 9, 11, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+( 6, 'Saw Sword', 'WEAPON', 9, 11, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+( 7, 'Ser Garlens Sword', 'WEAPON', 9, 11, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+( 8, 'Dragon Thorn', 'WEAPON', 9, 11, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+( 9, 'Vigilance Longsword', 'WEAPON', 9, 11, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(10, 'Heros Companion', 'WEAPON', 9, 11, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+
+(11, 'Enchanters Staff', 'WEAPON', 9, 11, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(12, 'Corrupted Magisters Staff', 'WEAPON', 9, 11, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(13, 'Oak Branch', 'WEAPON', 9, 11, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(14, 'Shaperates Blessing', 'WEAPON', 9, 11, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(15, 'Staff of the Ephemeral Order', 'WEAPON', 9, 11, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(16, 'Sylvans Mercy', 'WEAPON', 9, 11, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(17, 'Torch of Embers', 'WEAPON', 9, 11, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(18, 'Wilhelms Magus Staff', 'WEAPON', 9, 11, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(19, 'Call of the Inferno', 'WEAPON', 9, 11, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(20, 'Lamppost in Winter', 'WEAPON', 9, 11, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(21, 'Staff of Vigor', 'WEAPON', 9, 11, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+
+(22, 'Bow of the Golden Sun', 'WEAPON', 9, 11, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(23, 'Marjolaines Recurve', 'WEAPON', 9, 11, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(24, 'Eagles Eye', 'WEAPON', 9, 11, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(25, 'Misery Longbow', 'WEAPON', 9, 11, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(26, 'Scouts Bow', 'WEAPON', 9, 11, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(27, 'The Dark Moon', 'WEAPON', 9, 11, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(28, 'Song of Diligence', 'WEAPON', 9, 11, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(29, 'Whitewood Bow', 'WEAPON', 9, 11, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(30, 'The Foxs Bow', 'WEAPON', 9, 11, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(31, 'Dragonspite', 'WEAPON', 9, 11, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+
+(32, 'Leather Armor', 'ARMOR', 0, 0, 0, 20, 0, 0, 0, 0, 0, 10, 0, 2, 0),
+(33, 'Noble Armor', 'ARMOR', 0, 0, 0, 50, 0, 0, 0, 0, 0, 5, 0, 4, 0),
+(34, 'Chainmail Armor', 'ARMOR', 0, 0, 0, 50, 0, 0, 0, 0, 0, 5, 0, 4, 0),
+(35, 'Griffons Ensemble Armor', 'ARMOR', 0, 0, 0, 50, 0, 0, 0, 0, 0, 5, 0, 4, 0),
+(36, 'Imperium Armor', 'ARMOR', 0, 0, 0, 50, 0, 0, 0, 0, 0, 5, 0, 4, 0),
+
+(null, 'Small Healing Potion', 'HEALING', 5, 5, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(null, 'Middle Healing Potion', 'HEALING', 15, 15, 0, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(null, 'Large Healing Potion', 'HEALING', 50, 50, 0, 160, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+
+(null, 'TakeMeHome Scroll', 'SPECIAL', 0, 0, 0, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+
+
+create table player_name(
+	id int auto_increment,
+	name varchar(12) unique,
+	primary key(id)
+);
+
+
+insert into player_name values
+(null, 'cltsang'), (null, 'cliffso'), (null, 'angel'), (null, 'vincent'),
+(null, 'donald'), (null, 'thomas'), (null, 'ricky'), (null, 'kelvin'),
+(null, 'niels'), (null, 'wai'), (null, 'ching'), (null, 'fai'),
+(null, 'zero'), (null, 'harmony'), (null, 'simon'), (null, 'snow'),
+(null, 'hammerzz'), (null, 'phoebe'), (null, 'ladygaga'), (null, 'baka'),
+(null, 'leo'), (null, 'joe');
+
+
+create table player(
+	id int auto_increment,
+	name varchar(12) unique,
+	pass varchar(12),
+	rank varchar(20),
+	statpoints int,
+	experience int,
+	level int,
+	room int,
+	money int,
+	hitpoints int,
+	nextattacktime int,
+	strength int,
+	health int,
+	agility int,
+	maxhitpoints int,
+	accuracy int,
+	dodging int,
+	strikedamage int,
+	damageabsorb int,
+	hpregen int,
+	weapon int,
+	armor int,
+	primary key(id),
+	foreign key(id) references player_name(id),
+	foreign key(name) references player_name(name)
+);
+
+
+insert into player values
+(null, 'cltsang', 'cltsang', 'ADMIN', 5, 0, 1, 1, 100, 50, 0, 10, 4, 10, 50, 10, 10, 5, 5, 5, -1, -1),
+(null, 'cliffso', 'cliffso', 'ADMIN', 5, 0, 1, 1, 100, 50, 0, 10, 4, 10, 50, 10, 10, 5, 5, 5, -1, -1),
+(null, 'angel', 'angel', 'REGULAR', 5, 0, 1, 1, 100, 50, 0, 10, 4, 10, 50, 10, 10, 5, 5, 5, -1, -1),
+(null, 'vincent', 'vincent', 'REGULAR', 5, 0, 1, 1, 100, 50, 0, 10, 4, 10, 50, 10, 10, 5, 5, 5, -1, -1),
+(null, 'donald', 'donald', 'REGULAR', 5, 0, 1, 1, 100, 50, 0, 10, 4, 10, 50, 10, 10, 5, 5, 5, -1, -1),
+(null, 'thomas', 'thomas', 'REGULAR', 5, 0, 1, 1, 100, 50, 0, 10, 4, 10, 50, 10, 10, 5, 5, 5, -1, -1),
+(null, 'ricky', 'ricky', 'REGULAR', 5, 0, 1, 1, 100, 50, 0, 10, 4, 10, 50, 10, 10, 5, 5, 5, -1, -1),
+(null, 'kelvin', 'kelvin', 'REGULAR', 5, 0, 1, 1, 100, 50, 0, 10, 4, 10, 50, 10, 10, 5, 5, 5, -1, -1),
+(null, 'niels', 'niels', 'REGULAR', 5, 0, 1, 1, 100, 50, 0, 10, 4, 10, 50, 10, 10, 5, 5, 5, -1, -1),
+(null, 'wai', 'wai', 'REGULAR', 5, 0, 1, 1, 100, 50, 0, 10, 4, 10, 50, 10, 10, 5, 5, 5, -1, -1),
+(null, 'ching', 'ching', 'REGULAR', 5, 0, 1, 1, 100, 50, 0, 10, 4, 10, 50, 10, 10, 5, 5, 5, -1, -1),
+(null, 'fai', 'fai', 'REGULAR', 5, 0, 1, 1, 100, 50, 0, 10, 4, 10, 50, 10, 10, 5, 5, 5, -1, -1),
+(null, 'zero', 'zero', 'REGULAR', 5, 0, 1, 1, 100, 50, 0, 10, 4, 10, 50, 10, 10, 5, 5, 5, -1, -1),
+(null, 'harmony', 'harmony', 'REGULAR', 5, 0, 1, 1, 100, 50, 0, 10, 4, 10, 50, 10, 10, 5, 5, 5, -1, -1),
+(null, 'simon', 'simon', 'REGULAR', 5, 0, 1, 1, 100, 50, 0, 10, 4, 10, 50, 10, 10, 5, 5, 5, -1, -1),
+(null, 'snow', 'snow', 'REGULAR', 5, 0, 1, 1, 100, 50, 0, 10, 4, 10, 50, 10, 10, 5, 5, 5, -1, -1),
+(null, 'hammerzz', 'hammerzz', 'REGULAR', 5, 0, 1, 1, 100, 50, 0, 10, 4, 10, 50, 10, 10, 5, 5, 5, -1, -1),
+(null, 'phoebe', 'phoebe', 'REGULAR', 5, 0, 1, 1, 100, 50, 0, 10, 4, 10, 50, 10, 10, 5, 5, 5, -1, -1),
+(null, 'ladygaga', 'ladygaga', 'REGULAR', 5, 0, 1, 1, 100, 50, 0, 10, 4, 10, 50, 10, 10, 5, 5, 5, -1, -1),
+(null, 'baka', 'baka', 'REGULAR', 5, 0, 1, 1, 100, 50, 0, 10, 4, 10, 50, 10, 10, 5, 5, 5, -1, -1),
+(null, 'leo', 'leo', 'REGULAR', 5, 0, 1, 1, 100, 50, 0, 10, 4, 10, 50, 10, 10, 5, 5, 5, -1, -1),
+(null, 'joe', 'joe', 'REGULAR', 5, 0, 1, 1, 100, 50, 0, 10, 4, 10, 50, 10, 10, 5, 5, 5, -1, -1);
+
+
+create table missions_record(
+	playerid int,
+	room1_retiredHero_progress int,
+	room4_blacksmith_progress int,
+	room4_blacksmith_beaten int,
+	room28_gatekeeper_progress int,
+	room44_guru_progress int,
+	primary key(playerid),
+	foreign key(playerid) references player_name(id)
+);
+
+
+insert into missions_record values
+	( 1, 0, 0, 0, 0, 0),
+	( 2, 0, 0, 0, 0, 0),
+	( 3, 0, 0, 0, 0, 0),
+	( 4, 0, 0, 0, 0, 0),
+	( 5, 0, 0, 0, 0, 0),
+	( 6, 0, 0, 0, 0, 0),
+	( 7, 0, 0, 0, 0, 0),
+	( 8, 0, 0, 0, 0, 0),
+	( 9, 0, 0, 0, 0, 0),
+	(10, 0, 0, 0, 0, 0),
+	(11, 0, 0, 0, 0, 0),
+	(12, 0, 0, 0, 0, 0),
+	(13, 0, 0, 0, 0, 0),
+	(14, 0, 0, 0, 0, 0),
+	(15, 0, 0, 0, 0, 0),
+	(16, 0, 0, 0, 0, 0),
+	(17, 0, 0, 0, 0, 0),
+	(18, 0, 0, 0, 0, 0),
+	(19, 0, 0, 0, 0, 0),
+	(20, 0, 0, 0, 0, 0),
+	(21, 0, 0, 0, 0, 0),
+	(22, 0, 0, 0, 0, 0);
+
+
+create table cltsang_inventory(
+	id int auto_increment,
+	inventory int,
+	primary key(id),
+	foreign key(inventory) references item(id)
+);
+create table cliffso_inventory(
+	id int auto_increment,
+	inventory int,
+	primary key(id),
+	foreign key(inventory) references item(id)
+);
+create table angel_inventory(
+	id int auto_increment,
+	inventory int,
+	primary key(id),
+	foreign key(inventory) references item(id)
+);
+create table vincent_inventory(
+	id int auto_increment,
+	inventory int,
+	primary key(id),
+	foreign key(inventory) references item(id)
+);
+create table donald_inventory(
+	id int auto_increment,
+	inventory int,
+	primary key(id),
+	foreign key(inventory) references item(id)
+);
+create table thomas_inventory(
+	id int auto_increment,
+	inventory int,
+	primary key(id),
+	foreign key(inventory) references item(id)
+);
+create table ricky_inventory(
+	id int auto_increment,
+	inventory int,
+	primary key(id),
+	foreign key(inventory) references item(id)
+);
+create table kelvin_inventory(
+	id int auto_increment,
+	inventory int,
+	primary key(id),
+	foreign key(inventory) references item(id)
+);
+create table niels_inventory(
+	id int auto_increment,
+	inventory int,
+	primary key(id),
+	foreign key(inventory) references item(id)
+);
+create table wai_inventory(
+	id int auto_increment,
+	inventory int,
+	primary key(id),
+	foreign key(inventory) references item(id)
+);
+create table ching_inventory(
+	id int auto_increment,
+	inventory int,
+	primary key(id),
+	foreign key(inventory) references item(id)
+);
+create table fai_inventory(
+	id int auto_increment,
+	inventory int,
+	primary key(id),
+	foreign key(inventory) references item(id)
+);
+create table zero_inventory(
+	id int auto_increment,
+	inventory int,
+	primary key(id),
+	foreign key(inventory) references item(id)
+);
+create table harmony_inventory(
+	id int auto_increment,
+	inventory int,
+	primary key(id),
+	foreign key(inventory) references item(id)
+);
+create table simon_inventory(
+	id int auto_increment,
+	inventory int,
+	primary key(id),
+	foreign key(inventory) references item(id)
+);
+create table snow_inventory(
+	id int auto_increment,
+	inventory int,
+	primary key(id),
+	foreign key(inventory) references item(id)
+);
+create table hammerzz_inventory(
+	id int auto_increment,
+	inventory int,
+	primary key(id),
+	foreign key(inventory) references item(id)
+);
+create table phoebe_inventory(
+	id int auto_increment,
+	inventory int,
+	primary key(id),
+	foreign key(inventory) references item(id)
+);
+create table ladygaga_inventory(
+	id int auto_increment,
+	inventory int,
+	primary key(id),
+	foreign key(inventory) references item(id)
+);
+create table baka_inventory(
+	id int auto_increment,
+	inventory int,
+	primary key(id),
+	foreign key(inventory) references item(id)
+);
+create table leo_inventory(
+	id int auto_increment,
+	inventory int,
+	primary key(id),
+	foreign key(inventory) references item(id)
+);
+create table joe_inventory(
+	id int auto_increment,
+	inventory int,
+	primary key(id),
+	foreign key(inventory) references item(id)
+);
+
+
+insert into cltsang_inventory values
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0);
+insert into cliffso_inventory values
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0);
+insert into angel_inventory values
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0);
+insert into vincent_inventory values
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0);
+insert into donald_inventory values
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0);
+insert into thomas_inventory values
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0);
+insert into ricky_inventory values
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0);
+insert into kelvin_inventory values
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0);
+insert into niels_inventory values
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0);
+insert into wai_inventory values
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0);
+insert into ching_inventory values
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0);
+insert into fai_inventory values
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0);
+insert into zero_inventory values
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0);
+insert into harmony_inventory values
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0);
+insert into simon_inventory values
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0);
+insert into snow_inventory values
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0);
+insert into hammerzz_inventory values
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0);
+insert into phoebe_inventory values
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0);
+insert into ladygaga_inventory values
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0);
+insert into baka_inventory values
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0);
+insert into leo_inventory values
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0);
+insert into joe_inventory values
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0), (null, 0), (null, 0), (null, 0), (null, 0),
+(null, 0);
+
+
+create table enemy(
+	id int auto_increment,
+	name varchar(40) unique,
+	hitpoints int,
+	accuracy int,
+	dodging int,
+	strikedamage int,
+	damageabsorb int,
+	experience int,
+	weapon int,
+	moneymin int,
+	moneymax int,
+	primary key(id)
+);
+
+
+insert into enemy values
+	(null, 'Rabid Monkey', 6, 40, 10, 0, 0, 4, 1, 0, 2),
+	(null, 'Thug', 15, 70, -10, 0, 0, 10, 2, 0, 4),
+	(null, 'Bandit', 15, 70, -10, 0, 0, 10, 2, 0, 4),
+	(null, 'Drake', 6, 40, 50, 0, 0, 4, 1, 0, 2),
+	(null, 'Bear', 6, 40, 15, 0, 0, 4, 1, 0, 2),
+	(null, 'GiantPoisonous Spider', 6, 40, 20, 0, 0, 4, 1, 0, 2),
+	(null, 'Cropse', 6, 40, 15, 0, 0, 4, 1, 0, 2),
+	(null, 'Stalker', 6, 40, 20, 0, 0, 4, 1, 0, 2),
+	(null, 'Vampire', 6, 40, 35, 0, 0, 4, 1, 0, 2),
+	(null, 'Devourer', 6, 40, 35, 0, 0, 4, 1, 0, 2),
+	(null, 'Ghoul', 6, 40, 40, 0, 0, 4, 1, 0, 2),
+	(null, 'Gnome', 6, 40, 50, 0, 0, 4, 1, 0, 2),
+	(null, 'Sand monster', 6, 40, 60, 0, 0, 4, 1, 0, 2),
+	(null, 'Genie', 6, 40, 70, 0, 0, 4, 1, 0, 2),
+	(null, 'Pegasus', 6, 40, 80, 0, 0, 4, 1, 0, 2),
+	(null, 'Archdaemon', 6, 40, 99, 0, 0, 4, 1, 0, 2);
+
+
+create table enemy_loot(
+	id int,
+	itemid int,
+	percentage int,
+	foreign key(id) references enemy(id),
+	foreign key(itemid) references item(id)
+);
+
+
+insert into enemy_loot values
+	(1, 10, 15), (1, 2, 10),
+	(2, 2, 30);
+
+
+create table room(
+	id int auto_increment,
+	name varchar(256),
+	description varchar(2048),
+	type varchar(64),
+	area varchar(64),
+	north int,
+	east int,
+	south int,
+	west int,
+	enemy int,
+	maxenemies int,
+	primary key(id),
+	foreign key(enemy) references enemy(id)
+);
+
+
+insert into room values
+	( 1, 'Town Square', 'This is the central meeting place for the realm.', 'CENTRAL', 'METROPOLIS', 2, 0, 48, 0, 0, 0),
+	( 2, 'Street', 'You are in a small street. Litter is strewn about, and you see rats crawling in and out of the sewer grating.', 'PLAINROOM', 'METROPOLIS', 3, 0, 1, 0, 0, 0),
+	( 3, '3', 'This is a STORE', 'STORE', 'METROPOLIS', 13, 0, 2, 4, 0, 0),
+	( 4, '4', 'This is a PLAINROOM', 'PLAINROOM', 'METROPOLIS', 0, 3, 0, 5, 0, 0),
+	( 5, '5', 'This is a PLAINROOM', 'PLAINROOM', 'METROPOLIS', 6, 4, 52, 0, 0, 0),
+	( 6, '6', 'This is a PLAINROOM', 'PLAINROOM', 'METROPOLIS', 7, 0, 5, 0, 0, 0),
+	( 7, '7', 'This is a PLAINROOM', 'PLAINROOM', 'METROPOLIS', 8, 0, 6, 0, 0, 0),
+	( 8, '8', 'This is a PLAINROOM', 'PLAINROOM', 'METROPOLIS', 9, 10, 7, 0, 0, 0),
+	( 9, '9', 'This is a PLAINROOM', 'PLAINROOM', 'METROPOLIS', 0, 0, 8, 0, 0, 0),
+	(10, '10', 'This is a PLAINROOM', 'PLAINROOM', 'METROPOLIS', 0, 11, 0, 8, 0, 0),
+	(11, '11', 'This is a PLAINROOM', 'PLAINROOM', 'METROPOLIS', 0, 0, 12, 10, 0, 0),
+	(12, '12', 'This is a PLAINROOM', 'PLAINROOM', 'METROPOLIS', 11, 0, 13, 0, 0, 0),
+	(13, '13', 'This is a PLAINROOM', 'PLAINROOM', 'METROPOLIS', 12, 14, 3, 0, 0, 0),
+	(14, '14', 'This is a PLAINROOM', 'PLAINROOM', 'MOUNTAIN', 0, 15, 0, 13, 0, 0),
+	(15, '15', 'This is a PLAINROOM', 'PLAINROOM', 'MOUNTAIN', 0, 16, 0, 14, 0, 0),
+	(16, '16', 'This is a PLAINROOM', 'CENTRAL', 'MOUNTAIN', 0, 0, 17, 15, 0, 0),
+	(17, '17', 'This is a PLAINROOM', 'PLAINROOM', 'MOUNTAIN', 16, 18, 0, 0, 0, 0),
+	(18, '18', 'This is a PLAINROOM', 'PLAINROOM', 'MOUNTAIN', 0, 19, 0, 17, 0, 0),
+	(19, '19', 'This is a PLAINROOM', 'PLAINROOM', 'MOUNTAIN', 0, 0, 20, 18, 0, 0),
+	(20, '20', 'This is a STORE', 'STORE', 'MOUNTAIN', 19, 0, 21, 0, 0, 0),
+	(21, '21', 'This is a PLAINROOM', 'PLAINROOM', 'MOUNTAIN', 20, 0, 22, 0, 0, 0),
+	(22, '22', 'This is a PLAINROOM', 'PLAINROOM', 'MOUNTAIN', 21, 0, 0, 23, 0, 0),
+	(23, '23', 'This is a PLAINROOM', 'PLAINROOM', 'MOUNTAIN', 0, 22, 0, 24, 0, 0),
+	(24, '24', 'This is a PLAINROOM', 'PLAINROOM', 'MOUNTAIN', 0, 23, 25, 0, 0, 0),
+	(25, '25', 'This is a PLAINROOM', 'PLAINROOM', 'MOUNTAIN', 24, 0, 26, 0, 0, 0),
+	(26, '26', 'This is a PLAINROOM', 'PLAINROOM', 'FOREST', 25, 0, 27, 28, 0, 0),
+	(27, '27', 'This is a PLAINROOM', 'PLAINROOM', 'FOREST', 26, 0, 0, 29, 0, 0),
+	(28, '28', 'This is a SAVEROOM', 'SAVEROOM', 'FOREST', 0, 26, 0, 0, 0, 0),
+	(29, '29', 'This is a PLAINROOM', 'PLAINROOM', 'FOREST', 0, 27, 0, 30, 0, 0),
+	(30, '30', 'This is a PLAINROOM', 'PLAINROOM', 'FOREST', 0, 29, 31, 38, 0, 0),
+	(31, '31', 'This is a PLAINROOM', 'PLAINROOM', 'FOREST', 30, 0, 32, 0, 0, 0),
+	(32, '32', 'This is a STORE', 'STORE', 'FOREST', 31, 0, 0, 33, 0, 0),
+	(33, '33', 'This is a PLAINROOM', 'CENTRAL', 'FOREST', 34, 32, 0, 0, 0, 0),
+	(34, '34', 'This is a PLAINROOM', 'PLAINROOM', 'FOREST', 38, 0, 33, 35, 0, 0),
+	(35, '35', 'This is a SAVEROOM', 'SAVEROOM', 'FOREST', 37, 34, 0, 36, 0, 0),
+	(36, '36', 'This is a PLAINROOM', 'PLAINROOM', 'FOREST', 0, 35, 0, 39, 0, 0),
+	(37, '37', 'This is a PLAINROOM', 'PLAINROOM', 'FOREST', 0, 38, 35, 0, 0, 0),
+	(38, '38', 'This is a PLAINROOM', 'PLAINROOM', 'FOREST', 0, 30, 34, 37, 0, 0),
+	(39, '39', 'This is a PLAINROOM', 'PLAINROOM', 'FOREST', 40, 36, 0, 0, 0, 0),
+	(40, '40', 'This is a PLAINROOM', 'PLAINROOM', 'FOREST', 41, 0, 39, 0, 0, 0),
+	(41, '41', 'This is a PLAINROOM', 'PLAINROOM', 'FOREST', 42, 0, 40, 0, 0, 0),
+	(42, '42', 'This is a PLAINROOM', 'PLAINROOM', 'METROPOLIS', 49, 45, 41, 43, 0, 0),
+	(43, '43', 'This is a PLAINROOM', 'PLAINROOM', 'METROPOLIS', 0, 42, 0, 44, 0, 0),
+	(44, '44', 'In the shadow stands an old man, as if he does not exist. You can barely see him waving at you.', 'SAVEROOM', 'METROPOLIS', 0, 43, 0, 0, 0, 0),
+	(45, '45', 'This is a PLAINROOM', 'PLAINROOM', 'METROPOLIS', 0, 46, 0, 42, 0, 0),
+	(46, '46', 'This is a PLAINROOM', 'PLAINROOM', 'METROPOLIS', 0, 47, 0, 45, 0, 0),
+	(47, '47', 'This is a PLAINROOM', 'PLAINROOM', 'METROPOLIS', 48, 0, 0, 46, 0, 0),
+	(48, '48', 'This is a PLAINROOM', 'PLAINROOM', 'METROPOLIS', 1, 0, 47, 0, 0, 0),
+	(49, '49', 'This is a PLAINROOM', 'PLAINROOM', 'METROPOLIS', 50, 0, 42, 0, 0, 0),
+	(50, '50', 'This is a PLAINROOM', 'PLAINROOM', 'METROPOLIS', 0, 51, 49, 0, 0, 0),
+	(51, '51', 'This is a PLAINROOM', 'PLAINROOM', 'METROPOLIS', 52, 0, 0, 50, 0, 0),
+	(52, '52', 'This is a PLAINROOM', 'PLAINROOM', 'METROPOLIS', 5, 0, 51, 0, 0, 0);
+
+
+create table store_items(
+	roomid int,
+	itemid int,
+	pricefloat int,
+	foreign key(roomid) references room(id),
+	foreign key(itemid) references item(id)
+);
+
+
+insert into store_items values
+	( 3,  1, 0),
+	( 3,  2, 0),
+	( 3,  3, 0),
+	( 3,  4, 0),
+	( 3,  5, 0),
+	( 3,  6, 0),
+	( 3,  7, 0),
+	( 3,  8, 0),
+	( 3,  9, 0),
+	( 3, 10, 0),
+	( 3, 11, 0),
+	( 3, 12, 0),
+	( 3, 13, 0),
+	( 3, 14, 0),
+	( 3, 15, 0),
+	( 3, 16, 0),
+	( 3, 17, 0),
+	( 3, 18, 0),
+	( 3, 19, 0),
+	( 3, 20, 0),
+	( 3, 21, 0),
+	( 3, 22, 0),
+	( 3, 23, 0),
+	( 3, 24, 0),
+	( 3, 25, 0),
+	( 3, 26, 0),
+	( 3, 27, 0),
+	( 3, 28, 0),
+	( 3, 29, 0),
+	( 3, 30, 0),
+	( 3, 31, 0),
+	( 3, 32, 0),
+	( 3, 33, 0),
+	( 3, 34, 0),
+	( 3, 35, 0),
+	( 3, 36, 0),
+	( 3, 37, 0),
+	( 3, 38, 0),
+	( 3, 39, 0),
+	( 3, 40, 0),
+	(20, 37, 0),
+	(20, 38, 0),
+	(20, 39, 0),
+	(20, 40, 0),
+	(42, 37, 0),
+	(42, 38, 0),
+	(42, 39, 0),
+	(42, 40, 0);
+
+
+create table enemy_instance(
+	id int auto_increment,
+	templateid int,
+	hitpoints int,
+	room int,
+	nextattacktime int,
+	primary key(id),
+	foreign key(templateid) references enemy(id),
+	foreign key(room) references room(id)
+);
+
+
+insert into enemy_instance values
+	(null,  1,  6,  5, 0),
+	(null,  2, 15,  6, 0),
+	(null,  3, 15, 52, 0),
+	(null,  4, 15,  6, 0),
+	(null,  5, 15, 49, 0),
+	(null,  6, 15, 43, 0),
+	(null,  7, 15, 43, 0),
+	(null,  8, 15, 11, 0),
+	(null,  9, 15, 10, 0),
+	(null, 10, 15,  9, 0),
+	(null, 11, 15,  9, 0),
+	(null, 12, 15,  9, 0),
+	(null, 13, 15, 14, 0),
+	(null, 14, 15, 41, 0),
+	(null, 15, 15, 40, 0),
+	(null, 16,  6, 39, 0),
+	(null, 16,  6, 39, 0);
+
+
+create table room_volatile(
+	id int,
+	items varchar(255),
+	money int,
+	primary key(id),
+	foreign key(id) references room(id)
+);
+
+
+insert into room_volatile values
+	(1, '10 5 6 7 2', 200),
+	(2, '2 3 4 7', 100),
+	(3, '0', 0),
+	(4, '0', 0),
+	(5, '0', 0),
+	(6, '0', 0),
+	(7, '0', 0),
+	(8, '0', 0),
+	(9, '0', 0),
+	(10, '0', 0),
+	(11, '0', 0),
+	(12, '0', 0),
+	(13, '0', 0),
+	(14, '0', 0),
+	(15, '0', 0),
+	(16, '0', 0),
+	(17, '0', 0),
+	(18, '0', 0),
+	(19, '0', 0),
+	(21, '0', 0),
+	(22, '0', 0),
+	(23, '0', 0),
+	(24, '0', 0),
+	(25, '0', 0),
+	(26, '0', 0),
+	(27, '0', 0),
+	(28, '0', 0),
+	(29, '0', 0),
+	(30, '0', 0),
+	(31, '0', 0),
+	(32, '0', 0),
+	(33, '0', 0),
+	(34, '0', 0),
+	(35, '0', 0),
+	(36, '0', 0),
+	(37, '0', 0),
+	(38, '0', 0),
+	(39, '0', 0),
+	(40, '0', 0),
+	(41, '0', 0),
+	(42, '0', 0),
+	(43, '0', 0),
+	(44, '0', 0),
+	(45, '0', 0),
+	(46, '0', 0),
+	(47, '0', 0),
+	(48, '0', 0),
+	(49, '0', 0),
+	(50, '0', 0),
+	(51, '0', 0),
+	(52, '0', 0);
